@@ -70,10 +70,14 @@ def first_name():
         else:
             logging.warning(f"{valid_first_name} is a invalid first name. Please enter a valid first name")
             print("Please enter valid first name")
-
-if __name__ == "__main__":
+            
+def main():
     first_name()
     last_name()
     email_id()
     mobile_number()
     password()
+
+if __name__ == "__main__":
+    main()
+    
