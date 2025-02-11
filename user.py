@@ -36,7 +36,7 @@ def mobile_number():
             print("Please enter a valid mobile number")
             
 def email_id():
-    pattern = r'^[a-zA-Z0-9+%_-]+(?:\.[a-zA-Z0-9+%_-]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$'
+    pattern = r' ^[a-zA-Z0-9+%_-]+(?:\.[a-zA-Z0-9+%_-]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$ '
     while True:
         email = input("Enter your email id: ")
         search = re.fullmatch(pattern, email)
