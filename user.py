@@ -11,7 +11,7 @@ logging.basicConfig(
 	])
 
 def password():
-    pattern = r'^(?=.*[A-Z])(?=.*[0-9]).{8,}$'
+    pattern  =  r'^(?=.*[A-Z])(?=.*[0-9]).{8,}$'
     while True:
         password_rule_3 = input("Enter your password (min 8 characters, >= 1 [A-Z] and >= 1 [0-9]): ")
         search = re.fullmatch(pattern, password_rule_3)
