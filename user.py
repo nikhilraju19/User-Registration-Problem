@@ -10,17 +10,29 @@ logging.basicConfig(
 		logging.StreamHandler()
 	])
 
+def mobile_number():
+    pattern = r'^91 [0-9]{10}$'
+    while True:
+        mobile_no = input("Enter your mobile number: ")
+        search = re.fullmatch(pattern, mobile_no)
+        if search:
+            logging.info(f"{mobile_no} is valid mobile number")
+            print(f"{mobile_no} is a valid mobile number")
+            return mobile_no
+        else:
+            logging.warning(f"{mobile_no} is a invalid mobile number")
+            print("Please enter a valid mobile number")
+            
 def email_id():
-    email = input("Enter your email id: ")
     pattern = r'^[a-zA-Z0-9+%_-]+(?:\.[a-zA-Z0-9+%_-]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$'
     while True:
+        email = input("Enter your email id: ")
         search = re.fullmatch(pattern, email)
         if search:
             logging.info(f"{email} is valid email id")
-            print(f"{email} is a valid email id")
             return email
         else:
-            logging.info(f"{email} is valid email id")
+            logging.warning(f"{email} is invalid email id")
             print("Please enter a valid email id")
 
 def last_name():
@@ -51,3 +63,4 @@ if __name__ == "__main__":
     first_name()
     last_name()
     email_id()
+    mobile_number()
