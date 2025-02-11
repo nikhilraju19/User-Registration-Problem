@@ -11,17 +11,17 @@ logging.basicConfig(
 	])
 
 def password():
-    pattern  =  r'^(?=.*[A-Z])(?=.*[0-9]).{8,}$'
+    pattern = r'^(?=.*[A-Z])(?=.*\d)(?=(?:[^!@#$%^&*()\-+]*[!@#$%^&*()\-+][^!@#$%^&*()\-+]*)$).{8,}$'
     while True:
-        password_rule_3 = input("Enter your password (min 8 characters, >= 1 [A-Z] and >= 1 [0-9]): ")
-        search = re.fullmatch(pattern, password_rule_3)
+        final_password = input("Enter your password (min 8 characters, >=1 [A-Z], >=1 [0-9] and ==1 special character ): ")
+        search = re.fullmatch(pattern, final_password)
         if search:
-            logging.info(f"{password_rule_3} is a valid password")
-            print(f"{password_rule_3} is a valid password")
-            return password_rule_3
+            logging.info(f"{final_password} is a valid password")
+            print(f"{final_password} is a valid password")
+            return final_password
         else:
-            logging.warning(f"{password_rule_3} is a invalid password")
-            print("Please enter a valid password (min 8 characters, >= 1 [A-Z] and >= 1 [0-9])")
+            logging.warning(f"{final_password} is a invalid password")
+            print("Please enter a valid password (min 8 characters, >=1 [A-Z], >=1 [0-9] and ==1 special character )")
 
 def mobile_number():
     pattern = r'^91 [0-9]{10}$'
