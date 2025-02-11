@@ -11,16 +11,16 @@ logging.basicConfig(
 	])
 
 def email_id():
-    email = input("Enter your email id: ")
     pattern = r'^[a-zA-Z0-9+%_-]+(?:\.[a-zA-Z0-9+%_-]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$'
     while True:
+        email = input("Enter your email id: ")
         search = re.fullmatch(pattern, email)
         if search:
             logging.info(f"{email} is valid email id")
             print(f"{email} is a valid email id")
             return email
         else:
-            logging.info(f"{email} is valid email id")
+            logging.info(f"{email} is invalid email id")
             print("Please enter a valid email id")
 
 def last_name():
