@@ -10,6 +10,19 @@ logging.basicConfig(
 		logging.StreamHandler()
 	])
 
+def password():
+    pattern = r'^.{8,}$'
+    while True:
+        password_rule_1 = input("Enter your password (min 8 characters): ")
+        search = re.fullmatch(pattern, password_rule_1)
+        if search:
+            logging.info(f"{password_rule_1} is a valid password")
+            print(f"{password_rule_1} is a valid password")
+            return password_rule_1
+        else:
+            logging.warning(f"{password_rule_1} is a invalid password")
+            print("Please enter a valid password (min 8 characters)")
+
 def mobile_number():
     pattern = r'^91 [0-9]{10}$'
     while True:
@@ -17,7 +30,6 @@ def mobile_number():
         search = re.fullmatch(pattern, mobile_no)
         if search:
             logging.info(f"{mobile_no} is valid mobile number")
-            print(f"{mobile_no} is a valid mobile number")
             return mobile_no
         else:
             logging.warning(f"{mobile_no} is a invalid mobile number")
@@ -64,3 +76,4 @@ if __name__ == "__main__":
     last_name()
     email_id()
     mobile_number()
+    password()
