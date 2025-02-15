@@ -11,7 +11,7 @@ logging.basicConfig(
 	])
 
 def mobile_number():
-    pattern = r'^91 [0-9]{10}$'
+    pattern = r'^\+[0-9]{2,3} [0-9]{10}$'
     while True:
         mobile_no = input("Enter your mobile number: ")
         search = re.fullmatch(pattern, mobile_no)
