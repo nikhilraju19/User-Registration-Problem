@@ -24,7 +24,7 @@ def password():
             print("Please enter a valid password (min 8 characters, >=1 [A-Z], >=1 [0-9] and ==1 special character )")
 
 def mobile_number():
-    pattern = r'^91 [0-9]{10}$'
+    pattern = r'^\+[0-9]{2,3} [0-9]{10}$'
     while True:
         mobile_no = input("Enter your mobile number: ")
         search = re.fullmatch(pattern, mobile_no)
