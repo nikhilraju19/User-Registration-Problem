@@ -28,7 +28,7 @@ def validate_first_name(first_name):
         logging.warning(f"{first_name} is an invalid first name.")
         return False
     
-def last_name(last_name):
+def validate_last_name(last_name):
     """
 	Description:
 		Checks whether last name is valid or not
@@ -38,7 +38,6 @@ def last_name(last_name):
 		bool: True if last name is valid, False otherwise
     """
     pattern = r'^[A-Z][a-z]{2,}$'
-    last_name = input("Enter your last name: ")
     search = re.fullmatch(pattern,last_name)
     if search:
         logging.info(f"{last_name} is a valid last name")
@@ -63,10 +62,11 @@ def main():
 
     while True:
         last = input("Enter your last name: ")
-        if validate_first_name(last):
+        if validate_last_name(last):
             print(f"{last} is a valid last name")
             break
         print("Please enter valid last name")
         
 if __name__ == "__main__":
     main()
+    
