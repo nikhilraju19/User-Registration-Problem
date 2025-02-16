@@ -85,9 +85,9 @@ def validate_mobile_number(mobile_number):
 def validate_password(pass_rule_2):
     """
 	Description:
-		Checks whether password is minimum of 8 characters or not
+		Checks whether password is minimum of 8 characters and atleast 1 uppercase letter or not
 	Parameters:
-		pass_rule_1: password to validate
+		pass_rule_2: password to validate
 	Return:
 		bool: True if password is valid, False otherwise
     """
