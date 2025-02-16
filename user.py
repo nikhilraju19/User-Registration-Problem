@@ -132,7 +132,7 @@ def main():
     while True:
         password_rule_1 = input("Enter your password (min 8 characters): ")
         if validate_password(password_rule_1):
-            print(f"{password_rule_1} is a valid mobile number")
+            print(f"{password_rule_1} is a valid password")
             break
         print("Please enter a valid password (min 8 characters)")
 
